@@ -1,26 +1,124 @@
-﻿<Page
-    x:Class="Exam70485Prep.MainPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Exam70485Prep"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+﻿<Page x:Class="Exam70485Prep.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:Exam70485Prep"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" FontWeight="SemiBold" FontSize="46" Margin="77,39,0,0" TextWrapping="Wrap" Text="Exam 70-485" VerticalAlignment="Top" Height="62" Width="485"/>
-        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="77,189,0,0" TextWrapping="Wrap" FontSize="38" Text="1. Develop Windows Store Apps" VerticalAlignment="Top" Height="49" Width="644"/>
-        <TextBlock x:Name="textBlock1_Copy" HorizontalAlignment="Left" Margin="712,189,0,0" TextWrapping="Wrap" FontSize="38" Text="6. Prepare for a solution deloyment" VerticalAlignment="Top" Height="49" Width="644"/>
-        <TextBlock x:Name="textBlock1_Copy1" HorizontalAlignment="Left" Margin="712,367,0,0" TextWrapping="Wrap" FontSize="38" Text="5. Manage data and security" VerticalAlignment="Top" Height="49" Width="644"/>
-        <TextBlock x:Name="textBlock1_Copy2" HorizontalAlignment="Left" Margin="712,558,0,0" TextWrapping="Wrap" FontSize="38" Text="4. Enhance the user interface" VerticalAlignment="Top" Height="49" Width="644"/>
-        <TextBlock x:Name="textBlock1_Copy3" HorizontalAlignment="Left" Margin="77,558,0,0" TextWrapping="Wrap" FontSize="38" Text="3. Program user interaction" VerticalAlignment="Top" Height="49" Width="644"/>
-        <TextBlock x:Name="textBlock1_Copy4" HorizontalAlignment="Left" Margin="77,367,0,0" TextWrapping="Wrap" FontSize="38" Text="2. Discover and interact with devices" VerticalAlignment="Top" Height="49" Width="644"/>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="118,259,0,0" VerticalAlignment="Top" Height="82" Width="274"/>
-        <Button x:Name="button_Copy" Content="Button" HorizontalAlignment="Left" Margin="749,446,0,0" VerticalAlignment="Top" Height="82" Width="274"/>
-        <Button x:Name="button_Copy1" Content="Button" HorizontalAlignment="Left" Margin="118,446,0,0" VerticalAlignment="Top" Height="82" Width="274"/>
-        <Button x:Name="button_Copy2" Content="Button" HorizontalAlignment="Left" Margin="749,259,0,0" VerticalAlignment="Top" Height="82" Width="274"/>
-        <Button x:Name="button_Copy3" Content="Button" HorizontalAlignment="Left" Margin="749,628,0,0" VerticalAlignment="Top" Height="82" Width="274"/>
-        <Button x:Name="button_Copy4" Content="Button" HorizontalAlignment="Left" Margin="118,628,0,0" VerticalAlignment="Top" Height="82" Width="274"/>
+        <TextBlock x:Name="textBlock"
+                   HorizontalAlignment="Left"
+                   FontWeight="SemiBold"
+                   FontSize="64"
+                   Margin="77,39,0,0"
+                   TextWrapping="Wrap"
+                   Text="Exam 70-485"
+                   VerticalAlignment="Top"
+                   Height="84"
+                   Width="609" />
+        <TextBlock x:Name="textBlock1"
+                   HorizontalAlignment="Left"
+                   Margin="77,189,0,0"
+                   TextWrapping="Wrap"
+                   FontSize="38"
+                   Text="1. Develop Windows Store Apps"
+                   VerticalAlignment="Top"
+                   Height="49"
+                   Width="644" />
+        <TextBlock x:Name="textBlock1_Copy"
+                   HorizontalAlignment="Left"
+                   Margin="712,189,0,0"
+                   TextWrapping="Wrap"
+                   FontSize="38"
+                   Text="6. Prepare for a solution deloyment"
+                   VerticalAlignment="Top"
+                   Height="49"
+                   Width="644" />
+        <TextBlock x:Name="textBlock1_Copy1"
+                   HorizontalAlignment="Left"
+                   Margin="712,367,0,0"
+                   TextWrapping="Wrap"
+                   FontSize="38"
+                   Text="5. Manage data and security"
+                   VerticalAlignment="Top"
+                   Height="49"
+                   Width="644" />
+        <TextBlock x:Name="textBlock1_Copy2"
+                   HorizontalAlignment="Left"
+                   Margin="712,558,0,0"
+                   TextWrapping="Wrap"
+                   FontSize="38"
+                   Text="4. Enhance the user interface"
+                   VerticalAlignment="Top"
+                   Height="49"
+                   Width="644" />
+        <TextBlock x:Name="textBlock1_Copy3"
+                   HorizontalAlignment="Left"
+                   Margin="77,558,0,0"
+                   TextWrapping="Wrap"
+                   FontSize="38"
+                   Text="3. Program user interaction"
+                   VerticalAlignment="Top"
+                   Height="49"
+                   Width="644" />
+        <TextBlock x:Name="textBlock1_Copy4"
+                   HorizontalAlignment="Left"
+                   Margin="77,367,0,0"
+                   TextWrapping="Wrap"
+                   FontSize="38"
+                   Text="2. Discover and interact with devices"
+                   VerticalAlignment="Top"
+                   Height="49"
+                   Width="644" />
+        <Button x:Name="button"
+                Content="Button"
+                Click="button_Click"
+                HorizontalAlignment="Left"
+                Margin="118,259,0,0"
+                VerticalAlignment="Top"
+                Height="82"
+                Width="274" />
+        <Button x:Name="button_Copy"
+                Content="Button"
+                HorizontalAlignment="Left"
+                Margin="749,446,0,0"
+                VerticalAlignment="Top"
+                Height="82"
+                Width="274"
+                Click="button_Copy_Click" />
+        <Button x:Name="button_Copy1"
+                Content="Button"
+                HorizontalAlignment="Left"
+                Margin="118,446,0,0"
+                VerticalAlignment="Top"
+                Height="82"
+                Width="274"
+                Click="button_Copy1_Click" />
+        <Button x:Name="button_Copy2"
+                Content="Button"
+                HorizontalAlignment="Left"
+                Margin="749,259,0,0"
+                VerticalAlignment="Top"
+                Height="82"
+                Width="274"
+                Click="button_Copy2_Click" />
+        <Button x:Name="button_Copy3"
+                Content="Button"
+                HorizontalAlignment="Left"
+                Margin="749,628,0,0"
+                VerticalAlignment="Top"
+                Height="82"
+                Width="274"
+                Click="button_Copy3_Click" />
+        <Button x:Name="button_Copy4"
+                Content="Button"
+                HorizontalAlignment="Left"
+                Margin="118,628,0,0"
+                VerticalAlignment="Top"
+                Height="82"
+                Width="274"
+                Click="button_Copy4_Click" />
 
     </Grid>
 </Page>

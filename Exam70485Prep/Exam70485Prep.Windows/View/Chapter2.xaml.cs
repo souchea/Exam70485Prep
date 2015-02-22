@@ -45,7 +45,7 @@ namespace Exam70485Prep.View
         }
 
 
-        public Chapter1()
+        public Chapter2()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);

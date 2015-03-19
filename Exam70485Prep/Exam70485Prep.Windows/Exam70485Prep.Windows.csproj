@@ -104,12 +104,6 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <Folder Include="View\Chapter1\" />
-    <Folder Include="View\Chapter2\" />
-    <Folder Include="View\Chapter3\" />
-    <Folder Include="View\Chapter4\" />
-    <Folder Include="View\Chapter5\" />
-    <Folder Include="View\Chapter6\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\NavigationHelper.cs" />

@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Devices.Sensors;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -21,11 +23,13 @@ namespace Exam70485Prep
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class BasicPage1 : Page
+    public sealed partial class AccelerometerPage : Page
     {
 
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
+
+        public Accelerometer Acc { get; set; }
 
         /// <summary>
         /// This can be changed to a strongly typed view model.
@@ -45,12 +49,32 @@ namespace Exam70485Prep
         }
 
 
-        public BasicPage1()
+        public AccelerometerPage()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
+
+            Acc = Accelerometer.GetDefault();
+            if (Acc != null)
+            {
+                Acc.ReportInterval = 16;
+                Acc.ReadingChanged += ReadingChanged;
+            }
+            else
+            {
+                //var message = new MessageBox("your device does not have a accelerator");
+                //message.Show();
+            }
+        }
+
+        private async void ReadingChanged(Accelerometer sender, AccelerometerReadingChangedEventArgs args)
+        {
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            {
+                DefaultViewModel.ReadingChanged(args.Reading);
+            });
         }
 
         /// <summary>
@@ -86,8 +110,8 @@ namespace Exam70485Prep
         /// NavigationHelper to respond to the page's navigation methods.
         /// 
         /// Page specific logic should be placed in event handlers for the  
-        /// <see cref="GridCS.Common.NavigationHelper.LoadState"/>
-        /// and <see cref="GridCS.Common.NavigationHelper.SaveState"/>.
+        /// <see cref="Common.NavigationHelper.LoadState"/>
+        /// and <see cref="Common.NavigationHelper.SaveState"/>.
         /// The navigation parameter is available in the LoadState method 
         /// in addition to page state preserved during an earlier session.
 

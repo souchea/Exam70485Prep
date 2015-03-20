@@ -14,12 +14,14 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+// The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
+
 namespace Exam70485Prep
 {
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class CameraPage : Page
+    public sealed partial class BasicPage1 : Page
     {
 
         private NavigationHelper navigationHelper;
@@ -43,7 +45,7 @@ namespace Exam70485Prep
         }
 
 
-        public CameraPage()
+        public BasicPage1()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);

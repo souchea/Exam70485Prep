@@ -52,7 +52,7 @@
             <HubSection Width="780"
                         Margin="0,0,80,0"
                         Background="#FF524667" />
-            <HubSection Width="500"
+            <HubSection Width="Auto"
                         Header="Chapter 1">
                 <DataTemplate>
                     <Grid>
@@ -98,7 +98,7 @@
                     </Grid>
                 </DataTemplate>
             </HubSection>
-            <HubSection Width="500"
+            <HubSection Width="Auto"
                         Header="Chapter 2">
                 <DataTemplate>
                     <Grid>
@@ -144,7 +144,7 @@
                     </Grid>
                 </DataTemplate>
             </HubSection>
-            <HubSection Width="500"
+            <HubSection Width="Auto"
                         Header="Chapter 3">
                 <DataTemplate>
                     <Grid>
@@ -190,7 +190,7 @@
                     </Grid>
                 </DataTemplate>
             </HubSection>
-            <HubSection Width="500"
+            <HubSection Width="Auto"
                         Header="Chapter 4">
                 <DataTemplate>
                     <Grid>
@@ -236,7 +236,7 @@
                     </Grid>
                 </DataTemplate>
             </HubSection>
-            <HubSection Width="500"
+            <HubSection Width="Auto"
                         Header="Chapter 5">
                 <DataTemplate>
                     <Grid>
@@ -282,7 +282,7 @@
                     </Grid>
                 </DataTemplate>
             </HubSection>
-            <HubSection Width="500"
+            <HubSection Width="Auto"
                         Header="6. ">
                 <DataTemplate>
                     <Grid>

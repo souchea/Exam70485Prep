@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Exam70485Prep.ViewModel.chapter2;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
@@ -27,14 +28,14 @@ namespace Exam70485Prep
     {
 
         private NavigationHelper navigationHelper;
-        private ObservableDictionary defaultViewModel = new ObservableDictionary();
+        private AccelerometerViewModel defaultViewModel = new AccelerometerViewModel();
 
         public Accelerometer Acc { get; set; }
 
         /// <summary>
         /// This can be changed to a strongly typed view model.
         /// </summary>
-        public ObservableDictionary DefaultViewModel
+        public AccelerometerViewModel DefaultViewModel
         {
             get { return this.defaultViewModel; }
         }

@@ -14,7 +14,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace Exam70485Prep
+namespace Exam70485Prep.View.Chapter2
 {
     /// <summary>
     /// A basic page that provides characteristics common to most applications.

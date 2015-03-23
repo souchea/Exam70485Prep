@@ -31,14 +31,6 @@
                         <ColumnDefinition Width="80" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Button  x:Name="backButton"
-                             Margin="-1,-1,39,0"
-                             Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
-                             Style="{StaticResource NavigationBackButtonNormalStyle}"
-                             VerticalAlignment="Top"
-                             AutomationProperties.Name="Back"
-                             AutomationProperties.AutomationId="BackButton"
-                             AutomationProperties.ItemType="Navigation Button" />
                     <TextBlock x:Name="pageTitle"
                                Text="{StaticResource AppName}"
                                Style="{StaticResource HeaderTextBlockStyle}"
@@ -53,7 +45,7 @@
                         Margin="0,0,80,0"
                         Background="#FF524667" />
             <HubSection Width="Auto"
-                        Header="Chapter 1">
+                        Header="1. Develop Windows Store Apps">
                 <DataTemplate>
                     <Grid>
                         <GridView x:Name="itemGridView"
@@ -99,7 +91,7 @@
                 </DataTemplate>
             </HubSection>
             <HubSection Width="Auto"
-                        Header="Chapter 2">
+                        Header="2. Discover and interact with devices">
                 <DataTemplate>
                     <Grid>
                         <GridView x:Name="itemGridView"
@@ -145,7 +137,7 @@
                 </DataTemplate>
             </HubSection>
             <HubSection Width="Auto"
-                        Header="Chapter 3">
+                        Header="3. Program user interaction">
                 <DataTemplate>
                     <Grid>
                         <GridView x:Name="itemGridView"
@@ -191,7 +183,7 @@
                 </DataTemplate>
             </HubSection>
             <HubSection Width="Auto"
-                        Header="Chapter 4">
+                        Header="4. Enhance the user interface">
                 <DataTemplate>
                     <Grid>
                         <GridView x:Name="itemGridView"
@@ -237,7 +229,7 @@
                 </DataTemplate>
             </HubSection>
             <HubSection Width="Auto"
-                        Header="Chapter 5">
+                        Header="5. Manage data and security">
                 <DataTemplate>
                     <Grid>
                         <GridView x:Name="itemGridView"
@@ -283,7 +275,7 @@
                 </DataTemplate>
             </HubSection>
             <HubSection Width="Auto"
-                        Header="6. ">
+                        Header="6. Prepare for a solution deployment">
                 <DataTemplate>
                     <Grid>
                         <GridView x:Name="itemGridView"

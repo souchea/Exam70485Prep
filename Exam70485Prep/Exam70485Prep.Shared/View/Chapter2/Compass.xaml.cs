@@ -1,27 +1,16 @@
-﻿using Exam70485Prep.Common;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
+﻿using System;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Exam70485Prep.Common;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
-namespace Exam70485Prep
+namespace Exam70485Prep.View.Chapter2
 {
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class BasicPage1 : Page
+    public sealed partial class CompassPage : Page
     {
 
         private NavigationHelper navigationHelper;
@@ -45,7 +34,7 @@ namespace Exam70485Prep
         }
 
 
-        public BasicPage1()
+        public CompassPage()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);

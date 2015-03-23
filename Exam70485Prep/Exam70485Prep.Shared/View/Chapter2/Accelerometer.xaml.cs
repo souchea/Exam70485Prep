@@ -19,7 +19,7 @@ using Exam70485Prep.ViewModel.chapter2;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
-namespace Exam70485Prep
+namespace Exam70485Prep.View.Chapter2
 {
     /// <summary>
     /// A basic page that provides characteristics common to most applications.

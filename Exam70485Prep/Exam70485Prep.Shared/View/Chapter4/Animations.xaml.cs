@@ -16,12 +16,12 @@ using Windows.UI.Xaml.Navigation;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
-namespace Exam70485Prep
+namespace Exam70485Prep.View.Chapter4
 {
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class BasicPage1 : Page
+    public sealed partial class AnimationsPage : Page
     {
 
         private NavigationHelper navigationHelper;
@@ -44,8 +44,7 @@ namespace Exam70485Prep
             get { return this.navigationHelper; }
         }
 
-
-        public BasicPage1()
+        public AnimationsPage()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);

@@ -24,8 +24,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\chapter2\AccelerometerViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\chapter2\CameraViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\MainPageViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)View\Chapter1\BasicPage1.xaml.cs">
-      <DependentUpon>BasicPage1.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)View\Chapter1\WinMD.xaml.cs">
+      <DependentUpon>WinMD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\Chapter1\BackgroundTask.xaml.cs">
+      <DependentUpon>BackgroundTask.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)View\Chapter2\Accelerometer.xaml.cs">
       <DependentUpon>Accelerometer.xaml</DependentUpon>
@@ -95,7 +98,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="$(MSBuildThisFileDirectory)View\Chapter1\BasicPage1.xaml">
+    <Page Include="$(MSBuildThisFileDirectory)View\Chapter1\WinMD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)View\Chapter1\BackgroundTask.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

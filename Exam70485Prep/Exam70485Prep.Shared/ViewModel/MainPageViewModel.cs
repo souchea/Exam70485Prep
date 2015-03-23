@@ -4,6 +4,13 @@ using System.Collections.ObjectModel;
 using System.Text;
 using Exam70485Prep.Model;
 using Exam70485Prep.View;
+using Exam70485Prep.View.Chapter1;
+//using Exam70485Prep.View.Chapter1;
+using Exam70485Prep.View.Chapter2;
+using Exam70485Prep.View.Chapter3;
+using Exam70485Prep.View.Chapter4;
+using Exam70485Prep.View.Chapter5;
+using Exam70485Prep.View.Chapter6;
 
 namespace Exam70485Prep.ViewModel
 {
@@ -87,18 +94,13 @@ namespace Exam70485Prep.ViewModel
             {
                 new Item
                 {
-                    Name = "MainPage",
-                    Page = typeof(MainPage2)
+                    Name = "BackgroundTaskPage",
+                    Page = typeof(BackgroundTaskPage)
                 },
                 new Item 
                 {
-                    Name = "MainPage",
-                    Page = typeof(MainPage2)
-                },
-                new Item 
-                {
-                    Name = "MainPage",
-                    Page = typeof(MainPage2)
+                    Name = "WinMDPage",
+                    Page = typeof(WinMDPage)
                 }
             });
 
@@ -107,37 +109,37 @@ namespace Exam70485Prep.ViewModel
                 new Item
                 {
                     Name = "Camera",
-                    Page = typeof(MainPage2)
+                    Page = typeof(CameraPage)
                 },
                 new Item 
                 {
                     Name = "Accelerometer",
-                    Page = typeof(MainPage2)
+                    Page = typeof(AccelerometerPage)
                 },
                 new Item 
                 {
                     Name = "Gyrometer",
-                    Page = typeof(MainPage2)
+                    Page = typeof(GyrometerPage)
                 },
                 new Item 
                 {
                     Name = "Compass",
-                    Page = typeof(MainPage2)
+                    Page = typeof(CompassPage)
                 },
                 new Item 
                 {
                     Name = "Inclinometer",
-                    Page = typeof(MainPage2)
+                    Page = typeof(InclinometerPage)
                 },
                 new Item 
                 {
                     Name = "Location",
-                    Page = typeof(MainPage2)
+                    Page = typeof(LocationPage)
                 },
                 new Item 
                 {
                     Name = "Device",
-                    Page = typeof(MainPage2)
+                    Page = typeof(DevicePage)
                 }
             });
 
@@ -146,17 +148,17 @@ namespace Exam70485Prep.ViewModel
                 new Item
                 {
                     Name = "Printing",
-                    Page = typeof(MainPage2)
+                    Page = typeof(PrintingPage)
                 },
                 new Item
                 {
                     Name = "Play To",
-                    Page = typeof(MainPage2)
+                    Page = typeof(PlayToPage)
                 },
                 new Item 
                 {
                     Name = "Notification (WNS)",
-                    Page = typeof(MainPage2)
+                    Page = typeof(NotificationPage)
                 }
             });
 
@@ -165,22 +167,22 @@ namespace Exam70485Prep.ViewModel
                 new Item
                 {
                     Name = "Responsiveness",
-                    Page = typeof(MainPage2)
+                    Page = typeof(ResponsivePage)
                 },
                 new Item
                 {
                     Name = "Animations & Transitions",
-                    Page = typeof(MainPage2)
+                    Page = typeof(AnimationsPage)
                 },
                 new Item 
                 {
                     Name = "Custom controls",
-                    Page = typeof(MainPage2)
+                    Page = typeof(CustomPage)
                 },
                 new Item 
                 {
                     Name = "Globalization",
-                    Page = typeof(MainPage2)
+                    Page = typeof(GlobalizationPage)
                 }
             });
 
@@ -189,17 +191,17 @@ namespace Exam70485Prep.ViewModel
                 new Item
                 {
                     Name = "Data caching",
-                    Page = typeof(MainPage2)
+                    Page = typeof(DataCachingPage)
                 },
                 new Item
                 {
                     Name = "Retrieve files",
-                    Page = typeof(MainPage2)
+                    Page = typeof(FilesPage)
                 },
                 new Item 
                 {
                     Name = "App data",
-                    Page = typeof(MainPage2)
+                    Page = typeof(AppDataPage)
                 }
             });
 
@@ -209,22 +211,22 @@ namespace Exam70485Prep.ViewModel
                 new Item
                 {
                     Name = "Trial",
-                    Page = typeof(MainPage2)
+                    Page = typeof(TrialPage)
                 },
                 new Item
                 {
                     Name = "Error handling",
-                    Page = typeof(MainPage2)
+                    Page = typeof(ErrorPage)
                 },
                 new Item 
                 {
                     Name = "Test strategy",
-                    Page = typeof(MainPage2)
+                    Page = typeof(TestPage)
                 },
                 new Item 
                 {
                     Name = "Diagnostics",
-                    Page = typeof(MainPage2)
+                    Page = typeof(DiagnosticsPage)
                 }
             });
         } 

@@ -5,7 +5,6 @@ using System.Text;
 using Exam70485Prep.Model;
 using Exam70485Prep.View;
 using Exam70485Prep.View.Chapter1;
-//using Exam70485Prep.View.Chapter1;
 using Exam70485Prep.View.Chapter2;
 using Exam70485Prep.View.Chapter3;
 using Exam70485Prep.View.Chapter4;
@@ -204,7 +203,6 @@ namespace Exam70485Prep.ViewModel
                     Page = typeof(AppDataPage)
                 }
             });
-
 
             Chapter6Items = new ObservableCollection<Item>(new List<Item>
             {

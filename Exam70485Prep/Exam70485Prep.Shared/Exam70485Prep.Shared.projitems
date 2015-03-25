@@ -21,8 +21,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Item.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\BaseViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\chapter2\AccelerometerViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\chapter2\CameraViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\Chapter1\WinMdViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\Chapter2\AccelerometerViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\Chapter2\CameraViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\MainPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)View\Chapter1\WinMD.xaml.cs">
       <DependentUpon>WinMD.xaml</DependentUpon>
@@ -194,5 +195,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModel\Chapter3\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModel\Chapter4\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModel\Chapter5\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModel\Chapter6\" />
   </ItemGroup>
 </Project>

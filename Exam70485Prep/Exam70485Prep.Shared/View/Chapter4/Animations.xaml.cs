@@ -50,6 +50,8 @@ namespace Exam70485Prep.View.Chapter4
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
+
+            Storyboard1.Begin();
         }
 
         /// <summary>

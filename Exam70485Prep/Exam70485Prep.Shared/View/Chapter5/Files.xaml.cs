@@ -3,9 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage.Pickers;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -98,5 +101,49 @@ namespace Exam70485Prep.View.Chapter5
         }
 
         #endregion
+
+        private async void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            var picker = new FileOpenPicker();
+            picker.FileTypeFilter.Add(".pdf");
+            var file = await picker.PickSingleFileAsync();
+        }
+
+        private async void ButtonMultiplePick_OnClick(object sender, RoutedEventArgs e)
+        {
+            var picker = new FileOpenPicker();
+            picker.FileTypeFilter.Add(".pdf");
+
+            try
+            {
+                var files = await picker.PickMultipleFilesAsync();
+                foreach (var file in files)
+                {
+                    
+                }
+
+            }
+            catch (Exception)
+            {
+                new MessageDialog("Cannot select files with picker").ShowAsync();
+
+            }
+        }
+
+        private async void ButtonDocumentsPick_OnClick(object sender, RoutedEventArgs e)
+        {
+            var picker = new FileOpenPicker();
+            picker.ViewMode = PickerViewMode.Thumbnail;
+            picker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
+            picker.FileTypeFilter.Add(".pdf");
+            var file = await picker.PickSingleFileAsync();
+        }
+
+        private async void ButtonAnyPick_OnClick(object sender, RoutedEventArgs e)
+        {
+            var picker = new FileOpenPicker();
+            picker.FileTypeFilter.Add("*");
+            var file = await picker.PickSingleFileAsync();
+        }
     }
 }

@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Exam70485Prep.ViewModel.chapter2;
+using Exam70485Prep.ViewModel.Chapter1;
 
 namespace Exam70485Prep.View.Chapter1
 {
@@ -26,14 +26,12 @@ namespace Exam70485Prep.View.Chapter1
     {
 
         private NavigationHelper navigationHelper;
-        private AccelerometerViewModel defaultViewModel = new AccelerometerViewModel();
-
-        public Accelerometer Acc { get; set; }
+        private WinMdViewModel defaultViewModel = new WinMdViewModel();
 
         /// <summary>
         /// This can be changed to a strongly typed view model.
         /// </summary>
-        public AccelerometerViewModel DefaultViewModel
+        public WinMdViewModel DefaultViewModel
         {
             get { return this.defaultViewModel; }
         }
@@ -54,27 +52,8 @@ namespace Exam70485Prep.View.Chapter1
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
-
-            Acc = Accelerometer.GetDefault();
-            if (Acc != null)
-            {
-                Acc.ReportInterval = 16;
-                Acc.ReadingChanged += ReadingChanged;
-            }
-            else
-            {
-                //var message = new MessageBox("your device does not have a accelerator");
-                //message.Show();
-            }
         }
 
-        private async void ReadingChanged(Accelerometer sender, AccelerometerReadingChangedEventArgs args)
-        {
-            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
-            {
-                DefaultViewModel.ReadingChanged(args.Reading);
-            });
-        }
 
         /// <summary>
         /// Populates the page with content passed during navigation. Any saved state is also

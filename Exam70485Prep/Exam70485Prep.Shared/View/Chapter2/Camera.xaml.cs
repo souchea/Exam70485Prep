@@ -4,15 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
+using Windows.Devices.Enumeration;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Media.Capture;
+using Windows.Media.MediaProperties;
+using Windows.Storage.Streams;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
+using Exam70485Prep.ViewModel.chapter2;
 
 namespace Exam70485Prep.View.Chapter2
 {
@@ -23,12 +30,12 @@ namespace Exam70485Prep.View.Chapter2
     {
 
         private NavigationHelper navigationHelper;
-        private ObservableDictionary defaultViewModel = new ObservableDictionary();
+        private CameraViewModel defaultViewModel = new CameraViewModel();
 
         /// <summary>
         /// This can be changed to a strongly typed view model.
         /// </summary>
-        public ObservableDictionary DefaultViewModel
+        public CameraViewModel DefaultViewModel
         {
             get { return this.defaultViewModel; }
         }
@@ -49,6 +56,9 @@ namespace Exam70485Prep.View.Chapter2
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
+
+            StartWebCam();
+
         }
 
         /// <summary>
@@ -84,8 +94,8 @@ namespace Exam70485Prep.View.Chapter2
         /// NavigationHelper to respond to the page's navigation methods.
         /// 
         /// Page specific logic should be placed in event handlers for the  
-        /// <see cref="GridCS.Common.NavigationHelper.LoadState"/>
-        /// and <see cref="GridCS.Common.NavigationHelper.SaveState"/>.
+        /// <see cref="Common.NavigationHelper.LoadState"/>
+        /// and <see cref="Common.NavigationHelper.SaveState"/>.
         /// The navigation parameter is available in the LoadState method 
         /// in addition to page state preserved during an earlier session.
 
@@ -100,5 +110,62 @@ namespace Exam70485Prep.View.Chapter2
         }
 
         #endregion
+
+        public async void StartWebCam()
+        {
+            DeviceInformationCollection webcamList = await DeviceInformation.FindAllAsync(DeviceClass.VideoCapture);
+
+            DeviceInformation firstWebcam = webcamList.FirstOrDefault();
+
+            DefaultViewModel.WebcamCapture = new MediaCapture();
+
+
+            if (firstWebcam != null)
+            {
+                await DefaultViewModel.WebcamCapture.InitializeAsync(new MediaCaptureInitializationSettings
+                {
+                    VideoDeviceId = firstWebcam.Id,
+                    AudioDeviceId = "",
+                    StreamingCaptureMode = StreamingCaptureMode.Video,
+                    PhotoCaptureSource = PhotoCaptureSource.VideoPreview
+                });
+            }
+
+            Capture.Source = DefaultViewModel.WebcamCapture;
+
+            await DefaultViewModel.WebcamCapture.StartPreviewAsync();
+
+        }
+
+        private async void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (DefaultViewModel.WebcamCapture != null)
+            {
+                try
+                {
+                    ImageEncodingProperties encodingProperties =
+                        ImageEncodingProperties.CreateJpeg();
+                    WriteableBitmap bitmap =
+                        new WriteableBitmap((int) ImageElement.Width, (int) ImageElement.Height);
+                    using (var imageStream = new InMemoryRandomAccessStream())
+                    {
+                        await DefaultViewModel.WebcamCapture.CapturePhotoToStreamAsync(
+                            encodingProperties, imageStream);
+                        await imageStream.FlushAsync();
+                        imageStream.Seek(0);
+                        bitmap.SetSource(imageStream);
+                        await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal,
+                            () =>
+                            {
+                                ImageElement.Source = bitmap;
+                            });
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+        }
     }
 }

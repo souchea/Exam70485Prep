@@ -46,5 +46,37 @@
             <TextBlock x:Name="pageTitle" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40" Text="Files"/>
         </Grid>
+        <Button Content="Choose file" 
+                HorizontalAlignment="Left" 
+                Height="60" 
+                Margin="38,42,0,0" 
+                Grid.Row="1" 
+                VerticalAlignment="Top" 
+                Width="229"
+                Click="ButtonBase_OnClick"/>
+        <Button Content="Choose multiple file" 
+                HorizontalAlignment="Left" 
+                Height="60" 
+                Margin="38,127,0,0" 
+                Grid.Row="1" 
+                VerticalAlignment="Top" 
+                Click="ButtonMultiplePick_OnClick"
+                Width="229"/>
+        <Button Content="Choose any kind of file"
+                HorizontalAlignment="Left"
+                Height="60"
+                Margin="38,208,0,0"
+                Grid.Row="1"
+                VerticalAlignment="Top"
+                Click="ButtonAnyPick_OnClick"
+                Width="229" />
+        <Button Content="Choose file start from Documents"
+                HorizontalAlignment="Left"
+                Height="60"
+                Margin="38,291,0,0"
+                Grid.Row="1"
+                VerticalAlignment="Top"
+                Click="ButtonDocumentsPick_OnClick"
+                Width="278" />
     </Grid>
 </Page>

@@ -6,6 +6,9 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Security.Cryptography;
+using Windows.Security.Cryptography.Core;
+using Windows.Storage.Streams;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -13,6 +16,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Exam70485Prep.ViewModel.Chapter5;
 
 namespace Exam70485Prep.View.Chapter5
 {
@@ -23,12 +27,12 @@ namespace Exam70485Prep.View.Chapter5
     {
 
         private NavigationHelper navigationHelper;
-        private ObservableDictionary defaultViewModel = new ObservableDictionary();
+        private AppDataViewModel defaultViewModel = new AppDataViewModel();
 
         /// <summary>
         /// This can be changed to a strongly typed view model.
         /// </summary>
-        public ObservableDictionary DefaultViewModel
+        public AppDataViewModel DefaultViewModel
         {
             get { return this.defaultViewModel; }
         }
@@ -84,8 +88,8 @@ namespace Exam70485Prep.View.Chapter5
         /// NavigationHelper to respond to the page's navigation methods.
         /// 
         /// Page specific logic should be placed in event handlers for the  
-        /// <see cref="GridCS.Common.NavigationHelper.LoadState"/>
-        /// and <see cref="GridCS.Common.NavigationHelper.SaveState"/>.
+        /// <see cref="Common.NavigationHelper.LoadState"/>
+        /// and <see cref="Common.NavigationHelper.SaveState"/>.
         /// The navigation parameter is available in the LoadState method 
         /// in addition to page state preserved during an earlier session.
 
@@ -100,5 +104,20 @@ namespace Exam70485Prep.View.Chapter5
         }
 
         #endregion
+
+        public void HashMessage_Click(object sender, RoutedEventArgs args)
+        {
+            DefaultViewModel.HashMessage();
+        }
+
+        private void GenerateRandomNumber_Click(object sender, RoutedEventArgs e)
+        {
+            DefaultViewModel.GenerateRandom();
+        }
+
+        private void GenerateRandomData_Click(object sender, RoutedEventArgs e)
+        {
+            DefaultViewModel.GenerateRandomData();
+        }
     }
 }

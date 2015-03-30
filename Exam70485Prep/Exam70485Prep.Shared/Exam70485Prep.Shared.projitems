@@ -24,7 +24,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\Chapter1\WinMdViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\Chapter2\AccelerometerViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\Chapter2\CameraViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\Chapter5\AppDataViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\Chapter5\FilesViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\Chapter6\TrialViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\MainPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)View\Chapter1\WinMD.xaml.cs">
       <DependentUpon>WinMD.xaml</DependentUpon>
@@ -200,6 +202,5 @@
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)ViewModel\Chapter3\" />
     <Folder Include="$(MSBuildThisFileDirectory)ViewModel\Chapter4\" />
-    <Folder Include="$(MSBuildThisFileDirectory)ViewModel\Chapter6\" />
   </ItemGroup>
 </Project>

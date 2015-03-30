@@ -132,9 +132,11 @@ namespace Exam70485Prep.View.Chapter5
 
         private async void ButtonDocumentsPick_OnClick(object sender, RoutedEventArgs e)
         {
-            var picker = new FileOpenPicker();
-            picker.ViewMode = PickerViewMode.Thumbnail;
-            picker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
+            var picker = new FileOpenPicker
+            {
+                ViewMode = PickerViewMode.Thumbnail,
+                SuggestedStartLocation = PickerLocationId.DocumentsLibrary
+            };
             picker.FileTypeFilter.Add(".pdf");
             var file = await picker.PickSingleFileAsync();
         }

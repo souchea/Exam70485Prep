@@ -72,7 +72,10 @@ namespace Exam70485Prep.ViewModel.Chapter5
             {
                 HashedMessage = "There was an error creating the hash";
             }
-            HashedMessage = CryptographicBuffer.EncodeToBase64String(hashedMessage);
+            else
+            {
+                HashedMessage = CryptographicBuffer.EncodeToBase64String(hashedMessage);
+            }
         }
 
         public void GenerateRandom()

@@ -129,12 +129,9 @@ namespace Exam70485Prep.View.Chapter2
                     StreamingCaptureMode = StreamingCaptureMode.Video,
                     PhotoCaptureSource = PhotoCaptureSource.VideoPreview
                 });
+                Capture.Source = DefaultViewModel.WebcamCapture;
+                await DefaultViewModel.WebcamCapture.StartPreviewAsync();
             }
-
-            Capture.Source = DefaultViewModel.WebcamCapture;
-
-            await DefaultViewModel.WebcamCapture.StartPreviewAsync();
-
         }
 
         private async void ButtonBase_OnClick(object sender, RoutedEventArgs e)
